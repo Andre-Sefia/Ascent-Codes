@@ -1,0 +1,434 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: black; */
+    color: rgba(255, 255, 255, 0.712);
+    background-color: black;
+}
+/* THE CODE */
+.firstCover{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.code{
+    width: 40%;
+    height: 40%;
+}
+
+.videoCode{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.loadingPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+}
+
+.shadow{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* border-right: solid rgba(58, 143, 58, 0.644); */
+    box-shadow: 0 0 10px rgba(92, 92, 92, 0.61);
+    text-align: center;
+    /* display: none; */
+}
+
+
+.load{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2.5px 0 0 rgba(58, 143, 58, 0.801);
+    animation: rotate 0.7s infinite;
+    position: relative;
+}
+
+@keyframes rotate {
+    100%{
+        rotate: 360deg;
+    }
+}
+
+span{
+    position: absolute;
+    right: 17%;
+    bottom: 45%;
+    text-align: center;
+    text-shadow: 0 0 2.5px white;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    animation: text 3s ease-in-out infinite;
+}
+
+@keyframes text {
+    50%{
+        color: black;
+    }
+}
+
+
+.shadow:hover{
+    transform: scale(1.07);
+    transition: 0.6s;
+}
+.shadow:active{
+    transform: scale(1.5);
+    transition: 0.6s;
+}
+
+
+/* FRONT PAGE */
+.home {
+    display: none;
+    opacity: 0;
+}
+
+.home.fade-in {
+    display: block;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.cover{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 3px solid rgba(212, 212, 212, 0.397);
+}
+
+.backgroundClip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.logo{
+    height: 72%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(218, 216, 216, 0.377);
+    border-right: 2px solid rgba(70, 69, 69, 0.377);
+    border-bottom: 2px solid rgba(70, 69, 69, 0.377);
+    box-shadow: 0 0 10px rgba(153, 153, 153, 0.815);
+    border-radius: 15px;
+    background-color: rgba(18, 65, 0, 0.1);
+    backdrop-filter: blur(7px);
+}
+.logo:hover{
+    transform: scale(0.98);
+    transition: 0.25s;
+    box-shadow: 0 0 5px rgba(90, 90, 90, 0.651);
+}
+.ascent{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ascent img{
+    width: 95%;
+    height: 80%;
+}
+
+.welcome{
+    width: 100%;
+    height: 10%;
+}
+
+.logo p{
+    text-align: center;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.829);
+}
+
+.scroll{
+    margin-top: 5%;
+   text-align: center;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.829);
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    100%{
+        transform: translateY(-20px);
+    }
+}
+
+/* IDENTITIES */
+.identityContainer{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.identity{
+    width: 20%;
+    height: 45%;
+    margin: 3% 1.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    text-shadow: 0 0 2.5px white;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    border-radius: 7px;
+    color: black;
+}
+
+.identity:hover{
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.identity:active{
+    transform: scale(1.5);
+    transition: 0.4s;
+}
+
+.identity img{
+    width: 100%;
+    height: 85%;
+}
+
+.identity:first-child{
+    box-shadow: 0 0 5px rgba(109, 212, 109, 0.774);
+}
+.identity:nth-child(2){
+    box-shadow: 0 0 5px rgba(211, 144, 82, 0.774);
+}
+.identity:nth-child(3){
+    box-shadow: 0 0 5px rgba(184, 82, 204, 0.774);
+}
+.identity:nth-child(4){
+    box-shadow: 0 0 5px rgba(84, 131, 219, 0.774);
+}
+.identity:nth-child(5){
+    box-shadow: 0 0 5px rgba(231, 220, 59, 0.842);
+}
+.identity:nth-child(6){
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+}
+.identity:nth-child(7){
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+}
+.identity:nth-child(8){
+    box-shadow: 0 0 5px rgb(236, 143, 224);
+}
+
+
+/* ACCESS BUTTON */
+.access{
+    margin: 10% 0;
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.access a{
+    color: black;
+    text-align: center;
+    text-shadow: 0 0 2.5px rgba(12, 58, 10, 0.897);
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.801);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.801);
+    padding: 1% 2%;
+    border-radius: 3px;
+}
+
+.access a:hover{
+    transform: scale(0.99);
+    transition: 0.15s;
+}
+
+
+/* ── TABLET (601px – 1024px) ── */
+@media (max-width: 1024px) and (min-width: 601px) {
+
+    .code {
+        width: 65%;
+        height: 65%;
+    }
+
+    .shadow {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo {
+        width: 55%;
+        height: 60%;
+    }
+
+    .identityContainer {
+        height: auto;
+        padding: 5% 0;
+    }
+
+    .identity {
+        width: 40%;
+        height: 35%;
+        margin: 3% 2%;
+    }
+
+    .access {
+        margin: 15% 0;
+    }
+}
+
+
+/* ── MOBILE (600px and below) ── */
+@media (max-width: 600px) {
+
+    .code {
+        width: 85%;
+        height: 85%;
+    }
+
+    .shadow {
+        width: 150px;
+        height: 150px;
+    }
+
+    span {
+        font-size: 8px;
+        right: 20%;
+    }
+
+    /* FRONT PAGE */
+.cover{
+    justify-content: space-evenly;
+}
+
+    .logo {
+        width: 65%;
+        height: 65%;
+    }
+    .logo:hover{
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(90, 90, 90, 0.651);
+    }
+
+    .ascent img {
+        width: 100%;
+        height: 60%;
+    }
+
+    .scroll {
+        margin-top: 8%;
+        font-size: 9px;
+    }
+
+    .identityContainer {
+        height: auto;
+        padding: 8% 0;
+    }
+
+    .identity {
+        width: 80%;
+        height: 35%;
+        margin: 4% auto;
+        padding-bottom: 2%;
+    }
+
+    .identity img{
+        margin-bottom: 2%;
+    }
+
+
+    .identity:hover{
+        transform: scale(1);
+    }
+
+    .identity:active{
+        transform: scale(1.15);
+    }
+
+    .access {
+        margin: 20% 0;
+        height: auto;
+        padding: 10% 0;
+    }
+
+    .access a {
+        padding: 3% 6%;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 370px) {
+
+    /* FRONT PAGE */
+
+    .logo{
+        height: 55%;
+    }
+
+
+
+
+}
