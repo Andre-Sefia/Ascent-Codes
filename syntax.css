@@ -143,6 +143,10 @@ span{
     width: 100%;
 }
 
+.backgroundClipMobile{
+    display: none;
+}
+
 .logo{
     height: 72%;
     width: 25%;
@@ -326,6 +330,25 @@ span{
         height: 60%;
     }
 
+    .backgroundClip {
+    display: none;
+}
+
+.backgroundClip{
+    display: none;
+}
+
+.backgroundClipMobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
     .identityContainer {
         height: auto;
         padding: 5% 0;
@@ -378,6 +401,21 @@ span{
     .ascent img {
         width: 100%;
         height: 60%;
+    }
+
+    .backgroundClip{
+    display: none;
+    }
+
+    .backgroundClipMobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     }
 
     .scroll {

@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- QUICK CSS -->
+     <style>
+        .home { display: none; }
+        .loadingPage { display: none; }
+    </style>
+
     <link rel="stylesheet" href="syntax.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -37,21 +44,33 @@
     <div class="home" id="home">
         <div class="cover">
             <video autoplay muted loop class="backgroundClip">
-                <source src="media/Background/14531534_1920_1080_24fps.mp4">
+                <source src="media/Background/Horizontal Background.mp4">
             </video>
+
+            <video autoplay muted loop class="backgroundClipMobile">
+                <source src="media/Background/Vertical Background.mp4">
+            </video>
+
+
             <div class="logo">
                 <div class="ascent">
                     <img src="media/IMG_1767.png" alt="The Ascent">
                 </div>
+
                 <div class="welcome">
                     <p>Welcome</p>
                 </div>
+
             </div>
+
             <div class="scroll">
                 <i class="fa-solid fa-angles-down"></i>
                 <p>Scroll</p>
             </div>
+
         </div>
+
+
         <!-- IDENTITIES -->
         <div class="identityContainer">
             <div class="identity">
@@ -87,6 +106,8 @@
                 <p>The Muse</p>
             </div>
         </div>
+
+
         <!-- ACCESS BUTTON -->
         <div class="access">
             <a href="javascript:void(0)" id="granted">
