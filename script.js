@@ -57,3 +57,20 @@ introVideo.addEventListener('ended', () => {
         }, 5000);
     }, 600);
 });
+
+
+const music = document.getElementById('bg-music');
+music.volume = 0.5; // Adjust volume: 0.0 (silent) to 1.0 (full)
+
+// Browsers block autoplay until user interacts with the page
+// This plays the music on the first interaction
+function startMusic() {
+  music.play().catch(() => {});
+  document.removeEventListener('click', startMusic);
+  document.removeEventListener('scroll', startMusic);
+  document.removeEventListener('keydown', startMusic);
+}
+
+document.addEventListener('click', startMusic);
+document.addEventListener('scroll', startMusic);
+document.addEventListener('keydown', startMusic);
