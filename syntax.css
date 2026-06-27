@@ -9,6 +9,35 @@ body{
     color: rgba(255, 255, 255, 0.712);
     background-color: black;
 }
+
+/* TAP TO ENTER */
+.tapToEnter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    cursor: pointer;
+}
+
+.tapToEnter p {
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-family: system-ui, sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow:0 0 3px rgb(255, 255, 255);
+    animation: text 3s ease-in-out infinite;
+}
+
+
+
 /* THE CODE */
 .firstCover{
     position: fixed;

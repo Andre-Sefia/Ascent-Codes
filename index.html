@@ -12,9 +12,8 @@
     </style>
 
     <!-- HTML AUDIO -->
-     <audio id="bg-music" loop autoplay>
-        <source src="audio/20260626_010500.m4a" type="audio/mpeg">
-        <source src="audio/20260626_010500.m4a" type="audio/ogg">
+     <audio id="bg-music" loop autoplay muted preload="auto">
+        <source src="https://res.cloudinary.com/dat67gcxl/video/upload/v1782524886/20260626_010500_wcml3b.m4a" type="audio/mp4">
     </audio>
 
     <link rel="stylesheet" href="syntax.css">
@@ -23,13 +22,20 @@
 
 
 <body>
+
+<!-- TAP TO ENTER -->
+<div class="tapToEnter" id="tapToEnter">
+    <p>Tap to Ascend</p>
+</div>
+
 <!-- THE CODE -->
-<div class="firstCover" id="firstCover">
+<div class="firstCover" id="firstCover" style="display:none;">
     <div class="code" id="code">
-        <video src="media/Can you see it.mov" autoplay muted playsinline class="videoCode" id="introVideo">
+        <video src="media/Can you see it.mov" muted playsinline class="videoCode" id="introVideo">
         </video>
     </div>
 </div>
+
 
 <!--LOADING PAGE-->
 <div class="loadingPage" id="loading" style="display: none;">
@@ -116,7 +122,7 @@
 
         <!-- ACCESS BUTTON -->
         <div class="access">
-            <a href="https://form.typeform.com/to/QsXfdgVd" id="granted">
+            <a href="https://luma.com/oepfglr6" id="granted" target="_blank">
                 Request Access
             </a>
         </div>
