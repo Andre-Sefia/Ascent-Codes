@@ -297,7 +297,7 @@ span{
 /* IDENTITY OUTRO */
 .identityOutro {
     width: 50%;
-    margin: 4% auto;
+    margin: 8% auto;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -307,14 +307,14 @@ span{
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.identityOutroMain {
+/* .identityOutroMain {
     font-family: system-ui, sans-serif;
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
     line-height: 2.2;
-}
+} */
 
 .identityOutroSub {
     font-family: system-ui, sans-serif;
@@ -387,7 +387,7 @@ span{
 
 /* ACCESS BUTTON */
 .access{
-    margin: 10% 0;
+    margin: 5% 0;
     height: 20vh;
     width: 100%;
     display: flex;
