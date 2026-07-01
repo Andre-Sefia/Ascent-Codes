@@ -387,8 +387,7 @@ span{
 
 /* ACCESS BUTTON */
 .access{
-    margin: 5% 0;
-    height: 20vh;
+    height: 15vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -414,6 +413,43 @@ span{
     transform: scale(0.99);
     transition: 0.15s;
 }
+
+.social{
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 1% 0;
+}
+
+.instagram{
+    color: rgb(182, 93, 145);
+    margin: 1% 1%;
+    font-size: 20px;
+    text-shadow: 0 0 3px rgb(236, 166, 87);
+}
+
+.instagram:hover, .instagram:active{
+    text-shadow: 0 0 3px rgb(60, 58, 189);
+    transition: 0.3s ease;
+}
+
+.dj{
+    color: black;
+    margin: 1%;
+    font-size: 19px;
+    text-shadow: 0 0 4px white;
+}
+
+.dj:hover, .dj:active{
+    text-shadow: 0 0 3px rgba(68, 255, 44, 0.74);
+    transition: 0.3s ease;
+}
+
+
 
 
 /* ── TABLET (601px – 1024px) ── */
