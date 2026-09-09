@@ -391,6 +391,7 @@ span{
     height: 15vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -413,6 +414,18 @@ span{
 .access a:hover{
     transform: scale(0.99);
     transition: 0.15s;
+}
+
+.paystack-notice {
+  color: #a1a1aa; 
+  font-size: 0.825rem; 
+  font-style: italic;
+  margin-top: 15px; 
+  max-width: 320px; 
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .social{
