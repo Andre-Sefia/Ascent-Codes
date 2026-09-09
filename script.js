@@ -42,10 +42,16 @@ introVideo.addEventListener('ended', () => {
     }, 600);
 });
 
+document.querySelectorAll('.identity').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
+
 let button = document.getElementById('granted');
 
 button.onclick = function(){
-    if(button.innerHTML = "Request Access"){
+    if(button.innerHTML === "Request Access"){
         button.innerHTML = "Access"
         button.style.color = "white"
         button.style.backgroundColor = "rgba(34, 131, 34, 0.801)"

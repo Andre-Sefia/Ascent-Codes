@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -94,6 +97,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     border-radius: 50%;
     box-shadow: 0 2.5px 0 0 rgba(58, 143, 58, 0.801);
     animation: rotate 0.7s infinite;
@@ -108,13 +112,15 @@ body{
 
 span{
     position: absolute;
-    right: 17%;
+    right: 3%;
     bottom: 45%;
     text-align: center;
     text-shadow: 0 0 2.5px white;
     letter-spacing: 3px;
     font-size: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:'Cinzel', serif;
+    letter-spacing: 8px;
+    font-weight: 400;
     text-transform: uppercase;
     animation: text 3s ease-in-out infinite;
 }
@@ -160,7 +166,7 @@ span{
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(3, 43, 34, 0.719);
     border-bottom: 3px solid rgba(25, 73, 40, 0.5);
 }
 
@@ -345,13 +351,8 @@ span{
 }
 
 .identity:hover{
-    transform: scale(1.02);
-    transition: 0.2s;
-}
-
-.identity:active{
-    transform: scale(1.5);
-    transition: 0.4s;
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 .identity img{
@@ -460,6 +461,16 @@ span{
         height: 65%;
     }
 
+    span{
+        right: 12.5%;
+        bottom: 45%;
+        text-align: center;
+        text-shadow: 0 0 2.5px white;
+        letter-spacing: 3px;
+        font-size: 10px;
+        font-family:'Cinzel', serif;
+        font-weight: 400;
+    }
     .shadow {
         width: 120px;
         height: 120px;
@@ -520,8 +531,14 @@ span{
     }
 
     span {
-        font-size: 8px;
-        right: 20%;
+        font-size: 10px;
+        right: 12.5%;
+        bottom: 45%;
+        text-align: center;
+        text-shadow: 0 0 2.5px white;
+        letter-spacing: 5px;
+        font-family:'Cinzel', serif;
+        font-weight: 400;
     }
 
     /* FRONT PAGE */
