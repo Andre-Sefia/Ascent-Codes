@@ -38,7 +38,7 @@ introVideo.addEventListener('ended', () => {
         loading.style.display = 'flex';
         setTimeout(() => {
             revealHome();
-        }, 8000);
+        }, 5000);
     }, 600);
 });
 
