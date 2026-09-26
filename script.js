@@ -38,7 +38,7 @@ introVideo.addEventListener('ended', () => {
         loading.style.display = 'flex';
         setTimeout(() => {
             revealHome();
-        }, 5000);
+        }, 3000);
     }, 600);
 });
 
@@ -47,15 +47,3 @@ document.querySelectorAll('.identity').forEach(card => {
         card.classList.toggle('flipped');
     });
 });
-
-let button = document.getElementById('granted');
-
-button.onclick = function(){
-    if(button.innerHTML === "Request Access"){
-        button.innerHTML = "Access"
-        button.style.color = "white"
-        button.style.backgroundColor = "rgba(34, 131, 34, 0.801)"
-        button.style.boxShadow = "0 0 10px rgba(34, 131, 34, 0.801)"
-        button.style.textShadow = "0 0 2.5px white"
-    }
-}
