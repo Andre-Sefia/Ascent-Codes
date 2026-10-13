@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    /* background-color: black; */
+body {
     color: rgba(255, 255, 255, 0.712);
     background-color: black;
 }
@@ -35,114 +33,94 @@ body{
     font-family: system-ui, sans-serif;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
-    text-shadow:0 0 3px rgb(255, 255, 255);
+    text-shadow: 0 0 3px rgb(255, 255, 255);
     animation: text 3s ease-in-out infinite;
 }
 
-
-
-/* THE CODE */
-.firstCover{
+/* ── LOADING STAGES ── */
+/* FIX 1: display:none by default, JS sets to flex when needed */
+.loadingStage {
     position: fixed;
-    z-index: 9999;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
+    background-color: black;
+    display: none;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    z-index: 9999;
     opacity: 1;
-    transition: opacity 0.1s ease;
+    overflow: hidden;
 }
 
-.code{
-    width: 40%;
-    height: 60%;
+#loadingStage2 .loadingVideo {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    display: block;
 }
 
-.videoCode{
+/* FIX 1: stage 1 video must also be absolute to fill the stage */
+#loadingStage1 .loadingVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* For stage 2 the video sits behind the overlay */
+.loadingBg {
+    z-index: 1;
 }
 
 
-/* LOADING PAGE */
-.loadingPage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    z-index: 9999;
-}
-
-.shadow{
+/* Foreground overlay containing the spinner */
+.loadingOverlay {
     position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    /* border-right: solid rgba(58, 143, 58, 0.644); */
-    box-shadow: 0 0 10px rgba(92, 92, 92, 0.61);
-    text-align: center;
-    /* display: none; */
-}
-
-
-.load{
-    position: absolute;
+    z-index: 2;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    border-radius: 50%;
-    box-shadow: 0 2.5px 0 0 rgba(58, 143, 58, 0.801);
-    animation: rotate 0.7s infinite;
-    position: relative;
 }
 
-@keyframes rotate {
-    100%{
-        rotate: 360deg;
-    }
+/* CHAPTER II TEXT */
+.shadow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-span{
-    position: absolute;
-    right: 3%;
-    bottom: 45%;
+.load {
+    display: none;
+}
+
+span {
+    position: static;
     text-align: center;
-    text-shadow: 0 0 2.5px white;
-    letter-spacing: 3px;
-    font-size: 10px;
-    font-family:'Cinzel', serif;
-    letter-spacing: 8px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    letter-spacing: 10px;
+    font-size: 11px;
+    font-family: 'Cinzel', serif;
     font-weight: 400;
     text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
     animation: text 3s ease-in-out infinite;
 }
 
 @keyframes text {
-    50%{
-        color: black;
-    }
+    50% { color: rgba(255, 255, 255, 0.1); }
 }
 
-
-.shadow:hover{
-    transform: scale(1.07);
-    transition: 0.6s;
-}
-.shadow:active{
-    transform: scale(1.5);
-    transition: 0.6s;
-}
-
-
-/* FRONT PAGE */
+/* ── FRONT PAGE ── */
 .home {
     display: none;
     opacity: 0;
@@ -158,7 +136,7 @@ span{
     100% { opacity: 1; }
 }
 
-.cover{
+.cover {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -166,73 +144,83 @@ span{
     justify-content: center;
     align-items: center;
     position: relative;
-    /* background-color: rgba(58, 10, 54, 0.664); */
     border-bottom: 3px solid rgba(25, 73, 40, 0.5);
 }
 
-.backgroundClip{
+.backgroundClip {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    top: 0;
+    left: 0;
     z-index: -1;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.backgroundClipMobile{
+.backgroundClipMobile {
     display: none;
 }
 
-.logo{
-    height: 72%;
+/* ── HERO LOGO FLIP CARD ── */
+/* FIX 2: remove black background so card looks like a real card */
+.logo {
+    height: 550px;
     width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border-right: 2px solid rgba(70, 69, 69, 0.377);
-    border-bottom: 2px solid rgba(70, 69, 69, 0.377);
-    box-shadow: 0 0 10px rgba(85, 84, 84, 0.815);
-    border-radius: 15px;
-    background-color: rgba(18, 65, 0, 0.1);
-    backdrop-filter: blur(7px);
+    border-radius: 5px;
+    perspective: 1200px;
+    position: relative;
+    margin-top: 5px;
 }
-.logo:hover{
-    transform: scale(0.98);
+
+/* .logo:hover {
     transition: 0.25s;
-    box-shadow: 0 0 5px rgba(90, 90, 90, 0.651);
-}
-.ascent{
-    height: 100%;
+    box-shadow: 0 0 10px rgba(90, 90, 90, 0.4);
+} */
+
+.cardFlip {
     width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.45, 0, 0.2, 1);
+    border-radius: 15px;
+}
+
+.cardFlip.flipped {
+    transform: rotateY(180deg);
+}
+
+.cardFace {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
 }
 
-.ascent img{
+.cardFace img {
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    object-fit: cover;
+    border-radius: 25px;
+    display: block;
 }
 
-.welcome{
-    width: 100%;
-    height: 10%;
+.cardBack {
+    transform: rotateY(180deg);
 }
 
-.logo p{
-    text-align: center;
-    text-shadow: 0 0 5px rgb(255, 255, 255);
-    letter-spacing: 3px;
-    font-size: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.829);
-}
-
-.scroll{
+.scroll {
     margin-top: 5%;
-   text-align: center;
+    text-align: center;
     text-shadow: 0 0 5px rgb(255, 255, 255);
     letter-spacing: 3px;
     font-size: 10px;
@@ -243,21 +231,10 @@ span{
 }
 
 @keyframes bounce {
-    100%{
-        transform: translateY(-20px);
-    }
+    100% { transform: translateY(-20px); }
 }
 
-/* IDENTITIES */
-.identityContainer{
-    height: 95vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* IDENTITY INTRO */
+/* ── IDENTITY INTRO (pure black) ── */
 .identityIntro {
     width: 60%;
     margin: 6% auto 4% auto;
@@ -300,39 +277,47 @@ span{
     animation: text 3s ease-in-out infinite;
 }
 
-/* IDENTITY OUTRO */
-.identityOutro {
-    width: 50%;
-    margin: 8% auto;
-    text-align: center;
+/* ── TICKETS SECTION ── */
+/* FIX 3: extend background full width to footer */
+.ticketsSection {
+    position: relative;
+    width: 100%;
+    background-image: url('media/identities-bg.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: black;
+    padding-bottom: 5%;
+}
+
+.ticketsSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure all children sit above the gradient overlay */
+.ticketsSection > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── IDENTITIES ── */
+.identityContainer {
+    height: 95vh;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 3% 4%;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-/* .identityOutroMain {
-    font-family: system-ui, sans-serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 2.2;
-} */
-
-.identityOutroSub {
-    font-family: system-ui, sans-serif;
-    font-size: 12px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-
-.identity{
+.identity {
     width: 20%;
     height: 45%;
     margin: 3% 1.5%;
@@ -350,44 +335,49 @@ span{
     color: black;
 }
 
-.identity:hover{
+.identity:hover {
     transform: scale(1.05);
     transition: 0.3s;
 }
 
-.identity img{
+.identity img {
     width: 100%;
     height: 85%;
 }
 
-.identity:first-child{
-    box-shadow: 0 0 5px rgba(109, 212, 109, 0.774);
-}
-.identity:nth-child(2){
-    box-shadow: 0 0 5px rgba(211, 144, 82, 0.774);
-}
-.identity:nth-child(3){
-    box-shadow: 0 0 5px rgba(184, 82, 204, 0.774);
-}
-.identity:nth-child(4){
-    box-shadow: 0 0 5px rgba(84, 131, 219, 0.774);
-}
-.identity:nth-child(5){
-    box-shadow: 0 0 5px rgba(231, 220, 59, 0.842);
-}
-.identity:nth-child(6){
-    box-shadow: 0 0 5px rgb(255, 0, 0);
-}
-.identity:nth-child(7){
-    box-shadow: 0 0 5px rgb(255, 255, 255);
-}
-.identity:nth-child(8){
-    box-shadow: 0 0 5px rgb(236, 143, 224);
+.identity:first-child  { box-shadow: 0 0 5px rgba(109, 212, 109, 0.774); }
+.identity:nth-child(2) { box-shadow: 0 0 5px rgba(211, 144, 82, 0.774); }
+.identity:nth-child(3) { box-shadow: 0 0 5px rgba(184, 82, 204, 0.774); }
+.identity:nth-child(4) { box-shadow: 0 0 5px rgba(84, 131, 219, 0.774); }
+.identity:nth-child(5) { box-shadow: 0 0 5px rgba(231, 220, 59, 0.842); }
+.identity:nth-child(6) { box-shadow: 0 0 5px rgb(255, 0, 0); }
+.identity:nth-child(7) { box-shadow: 0 0 5px rgb(255, 255, 255); }
+.identity:nth-child(8) { box-shadow: 0 0 5px rgb(236, 143, 224); }
+
+/* ── IDENTITY OUTRO ── */
+.identityOutro {
+    width: 50%;
+    margin: 8% auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 3% 4%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.identityOutroSub {
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
 
-/* WHATSAPP ACCESS BUTTON */
-.access{
+/* ── WHATSAPP ACCESS BUTTON ── */
+.access {
     height: 15vh;
     width: 100%;
     display: flex;
@@ -396,7 +386,7 @@ span{
     justify-content: center;
 }
 
-.access a{
+.access a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -414,113 +404,113 @@ span{
     border-radius: 3px;
 }
 
-.access a i{
+.access a i {
     font-size: 14px;
     text-shadow: 0 0 2.5px rgba(0, 0, 0, 0.6);
 }
 
-.access a:hover{
+.access a:hover {
     transform: scale(0.99);
     transition: 0.15s;
     background-color: rgba(37, 211, 102, 1);
 }
 
 .whatsapp-notice {
-  color: #a1a1aa;
-  font-size: 0.825rem;
-  font-style: italic;
-  margin-top: 15px;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.4;
-  text-align: center;
+    color: #a1a1aa;
+    font-size: 0.825rem;
+    font-style: italic;
+    margin-top: 15px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+    text-align: center;
 }
 
-.social{
-    position: absolute;
-    left: 25%;
-    width: 50%;
+/* ── SOCIAL ── */
+/* FIX 3: social sits inside ticketsSection so background is inherited */
+.social {
+    width: 100%;
     height: 10vh;
     text-align: center;
     display: flex;
     justify-content: center;
-    margin: 1% 0;
+    align-items: center;
+    padding-bottom: 2%;
+    background-image: url('media/identities-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-.instagram{
+.instagram {
     color: rgb(182, 93, 145);
     margin: 1% 1%;
     font-size: 20px;
     text-shadow: 0 0 3px rgb(236, 166, 87);
 }
 
-.instagram:hover, .instagram:active{
+.instagram:hover, .instagram:active {
     text-shadow: 0 0 3px rgb(60, 58, 189);
     transition: 0.3s ease;
 }
 
-.dj{
-    color: black;
-    margin: 1%;
-    font-size: 19px;
-    text-shadow: 0 0 4px white;
-}
-
-.dj:hover, .dj:active{
-    text-shadow: 0 0 3px rgba(68, 255, 44, 0.74);
-    transition: 0.3s ease;
-}
-
-
-
-
 /* ── TABLET (601px – 1024px) ── */
 @media (max-width: 1024px) and (min-width: 601px) {
-
-    .code {
-        width: 65%;
-        height: 65%;
+    #loadingStage2 {
+        display: none;
+        align-items: center;
+        justify-content: center;
     }
 
-    span{
-        right: 12.5%;
-        bottom: 45%;
-        text-align: center;
-        text-shadow: 0 0 2.5px white;
-        letter-spacing: 3px;
+    #loadingStage2 .loadingVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #loadingStage2 .loadingOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    span {
+        letter-spacing: 6px;
         font-size: 10px;
-        font-family:'Cinzel', serif;
-        font-weight: 400;
-    }
-    .shadow {
-        width: 120px;
-        height: 120px;
     }
 
     .logo {
         width: 55%;
-        height: 60%;
+        height: 460px;
     }
 
     .backgroundClip {
-    display: none;
-}
+        display: none;
+    }
 
-.backgroundClip{
-    display: none;
-}
+    .backgroundClipMobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 
-.backgroundClipMobile {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
+    .ticketsSection::before {
+        height: 180px;
+    }
 
     .identityContainer {
         height: auto;
@@ -536,77 +526,75 @@ span{
     .access {
         margin: 15% 0;
     }
-}
 
+    .access a i {
+        font-size: 13px;
+    }
+}
 
 /* ── MOBILE (600px and below) ── */
 @media (max-width: 600px) {
-
-
-
-    .code {
-        width: 85%;
-        height: 85%;
+    #loadingStage2 {
+        display: none;
+        align-items: center;
+        justify-content: center;
     }
 
-    .shadow {
-        width: 150px;
-        height: 150px;
+    .loadingVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    #loadingStage2 .loadingOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .cover {
+        justify-content: space-evenly;
     }
 
     span {
-        font-size: 10px;
-        right: 12.5%;
-        bottom: 45%;
-        text-align: center;
-        text-shadow: 0 0 2.5px white;
         letter-spacing: 5px;
-        font-family:'Cinzel', serif;
-        font-weight: 400;
+        font-size: 9px;
     }
-
-    /* FRONT PAGE */
-.cover{
-    justify-content: space-evenly;
-}
 
     .logo {
         width: 70%;
-        height: 60%;
-    }
-    .logo:hover{
-        transform: scale(1);
-        box-shadow: 0 0 15px rgba(90, 90, 90, 0.651);
+        height: 420px;
     }
 
-    .ascent img {
-        width: 100%;
-        height: 100%;
-    }
 
-    .backgroundClip{
-    display: none;
+    .backgroundClip {
+        display: none;
     }
 
     .backgroundClipMobile {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     .scroll {
         margin-top: 8%;
         font-size: 9px;
-    }
-
-    .identityContainer {
-        height: auto;
-        padding: 8% 0;
     }
 
     .identityIntro {
@@ -617,6 +605,15 @@ span{
 
     .identityIntroMain {
         font-size: 11px;
+    }
+
+    .ticketsSection::before {
+        height: 140px;
+    }
+
+    .identityContainer {
+        height: auto;
+        padding: 8% 0;
     }
 
     .identityOutro {
@@ -631,16 +628,15 @@ span{
         padding-bottom: 2%;
     }
 
-    .identity img{
+    .identity img {
         margin-bottom: 2%;
     }
 
-
-    .identity:hover{
+    .identity:hover {
         transform: scale(1);
     }
 
-    .identity:active{
+    .identity:active {
         transform: scale(1.15);
     }
 
@@ -654,17 +650,14 @@ span{
         padding: 3% 6%;
         font-size: 9px;
     }
+
+    .access a i {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 370px) {
-
-    /* FRONT PAGE */
-
-    .logo{
+    .logo {
         height: 55%;
     }
-
-
-
-
 }
