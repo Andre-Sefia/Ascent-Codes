@@ -164,7 +164,7 @@ span {
 /* ── HERO LOGO FLIP CARD ── */
 /* FIX 2: remove black background so card looks like a real card */
 .logo {
-    height: 550px;
+    height: 95dvh;
     width: 25%;
     border-radius: 5px;
     perspective: 1200px;
@@ -464,10 +464,10 @@ span {
 
     #loadingStage2 .loadingVideo {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
         object-fit: cover;
     }
 
@@ -490,7 +490,7 @@ span {
 
     .logo {
         width: 55%;
-        height: 460px;
+        height: 70dvh;
     }
 
     .backgroundClip {
@@ -573,7 +573,7 @@ span {
 
     .logo {
         width: 70%;
-        height: 420px;
+        height: 65dvh;
     }
 
 
