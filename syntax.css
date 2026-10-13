@@ -256,6 +256,10 @@ span {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     line-height: 2;
 }
+.ascent{
+    color: rgba(58, 143, 58, 0.9);
+    text-shadow: 0 0 8px rgba(58, 143, 58, 0.5);
+}
 
 .identityIntroSub {
     font-family: system-ui, sans-serif;
@@ -333,6 +337,7 @@ span {
     text-transform: uppercase;
     border-radius: 7px;
     color: white;
+    background-color: #000;
 }
 
 .identity:hover {
@@ -356,24 +361,104 @@ span {
 
 /* ── IDENTITY OUTRO ── */
 .identityOutro {
-    width: 50%;
+    width: 55%;
     margin: 8% auto;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 3% 4%;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 25px;
+    padding: 5% 6%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.4);
+}
+.identityOutroHeading {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+    line-height: 2;
 }
 
-.identityOutroSub {
+.experienceBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.experienceTitle {
     font-family: system-ui, sans-serif;
-    font-size: 12px;
-    letter-spacing: 5px;
+    font-size: 11px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.screamathonTitle {
+    color: rgba(155, 50, 70, 0.95);
+    text-shadow: 0 0 8px rgba(155, 50, 70, 0.4);
+}
+
+.experienceBadge {
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background-color: rgba(58, 143, 58, 0.2);
+    border: 1px solid rgba(58, 143, 58, 0.5);
+    color: rgba(58, 143, 58, 0.9);
+    text-transform: uppercase;
+}
+
+.screamathonBadge {
+    background-color: rgba(155, 50, 70, 0.2);
+    border: 1px solid rgba(155, 50, 70, 0.5);
+    color: rgba(155, 50, 70, 0.9);
+}
+
+.screamathonTitle {
+    text-shadow: 0 0 12px rgba(155, 50, 70, 0.9), 0 0 25px rgba(155, 50, 70, 0.5);
+    }
+
+.ascentTitle{
+    color: rgba(58, 143, 58, 0.9);
+}    
+
+.experienceDesc {
+    font-family: system-ui, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 2.2;
+}
+
+.experienceDivider {
+    width: 30%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 0 auto;
+}
+
+.identityOutroClosing {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    font-style: italic;
 }
 
 /* ── WHATSAPP ACCESS BUTTON ── */
@@ -425,6 +510,19 @@ span {
     margin-right: auto;
     line-height: 1.4;
     text-align: center;
+}
+#movieTickets {
+    background-color: rgba(155, 50, 70, 0.9);
+    box-shadow: 0 0 10px rgba(155, 50, 70, 0.55);
+    color: white;
+    text-shadow: 0 0 2.5px rgba(0, 0, 0, 0.6);
+    margin-top: 12px;
+}
+
+#movieTickets:hover {
+    background-color: rgba(155, 50, 70, 1);
+    transform: scale(0.99);
+    transition: 0.15s;
 }
 
 /* ── SOCIAL ── */
@@ -616,9 +714,34 @@ span {
         padding: 8% 0;
     }
 
+
     .identityOutro {
-        width: 80%;
-        margin: 8% auto;
+    width: 88%;
+    margin: 8% auto;
+    gap: 20px;
+    padding: 6% 5%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+    .identityOutroHeading {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .experienceTitle {
+        font-size: 10px;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .experienceDesc {
+        font-size: 8px;
+    }
+
+    .identityOutroClosing {
+        font-size: 9px;
+        letter-spacing: 4px;
     }
 
     .identity {
