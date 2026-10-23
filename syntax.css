@@ -471,7 +471,7 @@ span {
     justify-content: center;
 }
 
-.access a {
+.access a, #movieTickets {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -517,12 +517,95 @@ span {
     color: white;
     text-shadow: 0 0 2.5px rgba(0, 0, 0, 0.6);
     margin-top: 12px;
+    cursor: pointer;
 }
 
 #movieTickets:hover {
     background-color: rgba(155, 50, 70, 1);
     transform: scale(0.99);
     transition: 0.15s;
+}
+
+/* ── TICKET EMBED ── */
+.ticketEmbedWrapper {
+    width: 55%;
+    margin: 4% auto 6% auto;
+    border-radius: 12px;
+    border: 1px solid rgba(155, 50, 70, 0.25);
+    background: rgba(155, 50, 70, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(180, 130, 30, 0.1) inset;
+    overflow: hidden;
+}
+
+.ticketEmbedHeader {
+    padding: 4% 6% 3% 6%;
+    border-bottom: 1px solid rgba(155, 50, 70, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.ticketEmbedTitle {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(155, 50, 70, 0.95);
+    text-shadow: 0 0 12px rgba(155, 50, 70, 0.6),
+                 0 0 25px rgba(155, 50, 70, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.ticketEmbedBadge {
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    background-color: rgba(180, 130, 30, 0.15);
+    border: 1px solid rgba(180, 130, 30, 0.5);
+    color: rgba(200, 155, 40, 0.95);
+    text-shadow: 0 0 8px rgba(180, 130, 30, 0.5);
+    font-family: system-ui, sans-serif;
+}
+
+.ticketEmbedSub {
+    font-family: system-ui, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 2;
+}
+
+.ticketEmbedBody {
+    padding: 4% 6%;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .ticketEmbedWrapper {
+        width: 88%;
+        margin: 8% auto;
+    }
+
+    .ticketEmbedTitle {
+        font-size: 10px;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+    .ticketEmbedWrapper {
+        width: 75%;
+    }
 }
 
 /* ── SOCIAL ── */
@@ -628,6 +711,14 @@ span {
     .access a i {
         font-size: 13px;
     }
+    #movieTickets {
+    padding: 3% 6%;
+    font-size: 9px;
+}
+
+#movieTickets i {
+    font-size: 12px;
+}
 }
 
 /* ── MOBILE (600px and below) ── */
@@ -777,6 +868,15 @@ span {
     .access a i {
         font-size: 12px;
     }
+
+#movieTickets {
+    padding: 3% 6%;
+    font-size: 9px;
+}
+
+#movieTickets i {
+    font-size: 12px;
+}
 }
 
 @media (max-width: 370px) {
@@ -784,3 +884,5 @@ span {
         height: 55%;
     }
 }
+
+
